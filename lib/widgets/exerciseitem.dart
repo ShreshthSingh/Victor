@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../providers/exercises.dart';
 
 class ExerciseItem extends StatelessWidget {
   final String title;
@@ -13,8 +15,15 @@ class ExerciseItem extends StatelessWidget {
     })
     
     ) */
-    Navigator.of(ctx)
-        .pushNamed('/exercise', arguments: {'id': id, 'title': title});
+    Exercise exercise =
+        Provider.of<Exercises>(ctx, listen: false).findExercise(id);
+    if (exercise.isCardio) {
+      Navigator.of(ctx)
+          .pushNamed('/cardioexercise', arguments: {'id': id, 'title': title});
+    } else {
+      Navigator.of(ctx)
+          .pushNamed('/mexercise', arguments: {'id': id, 'title': title});
+    }
   }
 
   @override

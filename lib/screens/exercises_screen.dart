@@ -28,6 +28,5 @@ class ExercisesScreen extends StatelessWidget {
               crossAxisSpacing: 20,
               mainAxisSpacing: 20),
         ));
-    ;
   }
 }

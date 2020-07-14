@@ -4,8 +4,9 @@ import 'package:victor/providers/category.dart';
 import 'package:victor/providers/exercises.dart';
 import 'package:victor/providers/session.dart';
 import 'package:victor/screens/category_screen.dart';
-import 'package:victor/screens/exercise_sceen.dart';
+import 'package:victor/screens/cardio_exercise_sceen.dart';
 import 'package:victor/screens/exercises_screen.dart';
+import 'package:victor/screens/mexercise.dart';
 import 'package:victor/screens/sign_up.dart';
 import 'package:victor/screens/splash_screen.dart';
 import 'package:victor/screens/timer.dart';
@@ -38,7 +39,8 @@ class MyApp extends StatelessWidget {
             '/result': (ctx) => Result(),
             '/categories': (ctx) => CategoryScreen(),
             '/exercises': (ctx) => ExercisesScreen(),
-            '/exercise': (ctx) => ExerciseScreen()
+            '/cardioexercise': (ctx) => CardioExerciseScreen(),
+            '/mexercise': (ctx) => MExerciseScreen()
           },
         ));
   }

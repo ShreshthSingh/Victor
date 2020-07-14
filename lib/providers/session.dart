@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 
 class Session with ChangeNotifier {
-  List<String> sessLog = [];
+  List<Map<String, double>> cardLog = [];
 
-  void add(String sec) {
-    sessLog.insert(0, sec);
-    notifyListeners();
-    print(sessLog);
+  List<Map<String, double>> mexLog = [];
+
+  void addCardio(String id, double score) {
+    cardLog.insert(0, {id: double.parse((score).toStringAsFixed(2))});
+    print(cardLog);
+  }
+
+  void addEx(String id, double score) {
+    mexLog.insert(0, {id: score});
+    print(mexLog);
   }
 
 /* 

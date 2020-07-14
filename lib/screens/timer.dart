@@ -5,7 +5,9 @@ import '../providers/session.dart';
 
 class TimerPage extends StatefulWidget {
   final Function sessionAdded;
+
   TimerPage(this.sessionAdded);
+
   @override
   _TimerPageState createState() => _TimerPageState();
 }
