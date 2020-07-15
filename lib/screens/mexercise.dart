@@ -11,8 +11,7 @@ class MExerciseScreen extends StatefulWidget {
 }
 
 class _MExerciseScreenState extends State<MExerciseScreen> {
-  var reps = TextEditingController();
-  var sets = TextEditingController();
+  var totalreps = TextEditingController();
 
   Future<void> _launchURL(String url) async {
     if (await canLaunch(url)) {
@@ -23,7 +22,7 @@ class _MExerciseScreenState extends State<MExerciseScreen> {
   }
 
   void addSession(ctx, id, score) {
-    if ((reps.text == null) || (sets.text == null)) {
+    if ((totalreps.text == null)) {
       return;
     }
     Provider.of<Session>(ctx, listen: false).addEx(id, score);
@@ -51,21 +50,16 @@ class _MExerciseScreenState extends State<MExerciseScreen> {
               onPressed: () => _launchURL(exercise.upath),
               icon: Icon(Icons.video_library),
               label: Text('Youtube')),
-          TextField(
-              decoration: InputDecoration(labelText: 'Reps'),
-              controller: reps,
-              keyboardType: TextInputType.number),
-          TextField(
-              decoration: InputDecoration(labelText: 'Sets'),
-              controller: sets,
-              keyboardType: TextInputType.number),
+          Padding(
+            padding: const EdgeInsets.all(81.0),
+            child: TextField(
+                decoration: InputDecoration(labelText: 'Total Reps'),
+                controller: totalreps,
+                keyboardType: TextInputType.number),
+          ),
           RaisedButton(
             onPressed: () => addSession(
-                context,
-                id,
-                exercise.muscleScr *
-                    int.parse(sets.text) *
-                    int.parse(reps.text)),
+                context, id, exercise.muscleScr * int.parse(totalreps.text)),
             color: Colors.red,
             child: Text(
               'Done',

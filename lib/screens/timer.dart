@@ -44,7 +44,9 @@ class _TimerPageState extends State<TimerPage> {
                 borderRadius: 100,
                 isRaised: true,
                 tracetime: (time) {
-                  sessionTime = time.currentSeconds;
+                  sessionTime = (time.currentSeconds) +
+                      (time.currentMinutes * 60) +
+                      (time.currentHour * 3600);
                 },
               ),
               SizedBox(

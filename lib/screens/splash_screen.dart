@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/user.dart';
+import '../providers/session.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -17,6 +18,10 @@ class _SplashScreenState extends State<SplashScreen> {
 
   void catExer() {
     Navigator.of(context).pushNamed('/categories');
+  }
+
+  void goToMeals() {
+    Navigator.of(context).pushNamed('/meals');
   }
 
   @override
@@ -54,11 +59,26 @@ class _SplashScreenState extends State<SplashScreen> {
                         icon: Icon(Icons.add),
                         label: Text('Add User')),
                   )
-                : Center(
-                    child: RaisedButton.icon(
-                        icon: Icon(Icons.directions_bike),
-                        onPressed: catExer,
-                        label: Text('Exercises')),
+                : Column(
+                    children: <Widget>[
+                      Center(
+                        child: RaisedButton.icon(
+                            icon: Icon(Icons.directions_bike),
+                            onPressed: catExer,
+                            label: Text('Exercises')),
+                      ),
+                      RaisedButton.icon(
+                          onPressed: () {
+                            Provider.of<Session>(context, listen: false)
+                                .totalScore;
+                          },
+                          icon: Icon(Icons.assignment),
+                          label: Text('Analysis')),
+                      RaisedButton.icon(
+                          onPressed: goToMeals,
+                          icon: Icon(Icons.assignment),
+                          label: Text('Meals Screen'))
+                    ],
                   )));
   }
 }

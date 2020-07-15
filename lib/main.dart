@@ -2,16 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:victor/providers/category.dart';
 import 'package:victor/providers/exercises.dart';
+import 'package:victor/providers/meal.dart';
 import 'package:victor/providers/session.dart';
 import 'package:victor/screens/category_screen.dart';
 import 'package:victor/screens/cardio_exercise_sceen.dart';
 import 'package:victor/screens/exercises_screen.dart';
+import 'package:victor/screens/meals_screen.dart';
 import 'package:victor/screens/mexercise.dart';
 import 'package:victor/screens/sign_up.dart';
 import 'package:victor/screens/splash_screen.dart';
 import 'package:victor/screens/timer.dart';
 import './providers/user.dart';
 import './screens/result.dart';
+import './providers/meal_cart.dart';
 
 void main() {
   runApp(MyApp());
@@ -25,7 +28,9 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider.value(value: Users()),
           ChangeNotifierProvider.value(value: Categories()),
           ChangeNotifierProvider.value(value: Exercises()),
-          ChangeNotifierProvider.value(value: Session())
+          ChangeNotifierProvider.value(value: Session()),
+          ChangeNotifierProvider.value(value: Meals()),
+          ChangeNotifierProvider.value(value: CartMeals())
         ],
         child: MaterialApp(
           theme: ThemeData(
@@ -40,7 +45,8 @@ class MyApp extends StatelessWidget {
             '/categories': (ctx) => CategoryScreen(),
             '/exercises': (ctx) => ExercisesScreen(),
             '/cardioexercise': (ctx) => CardioExerciseScreen(),
-            '/mexercise': (ctx) => MExerciseScreen()
+            '/mexercise': (ctx) => MExerciseScreen(),
+            '/meals': (ctx) => MealsScreen()
           },
         ));
   }

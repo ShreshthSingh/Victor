@@ -54,7 +54,7 @@ class Exercises with ChangeNotifier {
         steps: ['', '', '', '', ''],
         warnings: ['', '', '', '', ''],
         muscleScr: 0.10,
-        cardioScr: 0.80),
+        cardioScr: 0.70),
     Exercise(
         id: 'e4',
         isCardio: true,
@@ -77,14 +77,14 @@ class Exercises with ChangeNotifier {
         cardioScr: 0.85),
     Exercise(
         id: 'e6',
-        isCardio: false,
+        isCardio: true,
         title: 'plank',
         upath: 'https://www.youtube.com/results?search_query=plank',
         categories: ['c6', 'c4'],
         steps: ['', '', '', '', ''],
         warnings: ['', '', '', '', ''],
         muscleScr: 0.56,
-        cardioScr: 0.29),
+        cardioScr: 0.30),
     Exercise(
         id: 'e7',
         isCardio: true,
@@ -95,7 +95,7 @@ class Exercises with ChangeNotifier {
         steps: ['', '', '', '', ''],
         warnings: ['', '', '', '', ''],
         muscleScr: 0.20,
-        cardioScr: 0.95),
+        cardioScr: 0.80),
     Exercise(
         id: 'e8',
         title: 'HeadStand pushups',
@@ -146,7 +146,17 @@ class Exercises with ChangeNotifier {
         steps: ['', '', '', '', ''],
         warnings: ['', '', '', '', ''],
         muscleScr: 0.50,
-        cardioScr: 0.70)
+        cardioScr: 0.70),
+    Exercise(
+        id: 'e13',
+        isCardio: true,
+        title: 'Jogging',
+        upath: 'https://www.youtube.com/results?search_query=jogging',
+        categories: ['c7'],
+        steps: ['', '', '', '', ''],
+        warnings: ['', '', '', '', ''],
+        muscleScr: 0.1,
+        cardioScr: 0.50)
   ];
 
   List<Exercise> get exercises {

@@ -1,18 +1,42 @@
 import 'package:flutter/material.dart';
 
 class Session with ChangeNotifier {
-  List<Map<String, double>> cardLog = [];
+  Map<String, double> cardLog = {};
 
-  List<Map<String, double>> mexLog = [];
+  Map<String, double> mexLog = {};
 
   void addCardio(String id, double score) {
-    cardLog.insert(0, {id: double.parse((score).toStringAsFixed(2))});
+    cardLog[id] = double.parse((score).toStringAsFixed(2));
     print(cardLog);
   }
 
   void addEx(String id, double score) {
-    mexLog.insert(0, {id: score});
+    mexLog[id] = double.parse((score).toStringAsFixed(2));
     print(mexLog);
+  }
+
+  double get cardioScore {
+    var score = 0.0;
+    cardLog.forEach((key, value) {
+      score += value;
+    });
+
+    return double.parse((score).toStringAsFixed(2));
+  }
+
+  double get mexScore {
+    var score = 0.0;
+    mexLog.forEach((key, value) {
+      score += value;
+    });
+
+    return double.parse((score).toStringAsFixed(2));
+  }
+
+  double get totalScore {
+    var score = ((mexScore / 180) * 30) + ((cardioScore / 240) * 25);
+    print(score);
+    return score;
   }
 
 /* 
