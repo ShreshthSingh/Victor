@@ -34,6 +34,7 @@ dependencies:
   path: ^1.6.4
   url_launcher: ^5.5.0
   flutter_timer: ^0.0.6
+  pie_chart: ^3.1.1
 
 
 dev_dependencies:

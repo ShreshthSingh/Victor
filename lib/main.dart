@@ -10,6 +10,7 @@ import 'package:victor/screens/exercises_screen.dart';
 import 'package:victor/screens/meal_analysis.dart';
 import 'package:victor/screens/meals_screen.dart';
 import 'package:victor/screens/mexercise.dart';
+import 'package:victor/screens/session_result.dart';
 import 'package:victor/screens/sign_up.dart';
 import 'package:victor/screens/splash_screen.dart';
 import 'package:victor/screens/timer.dart';
@@ -48,7 +49,8 @@ class MyApp extends StatelessWidget {
             '/cardioexercise': (ctx) => CardioExerciseScreen(),
             '/mexercise': (ctx) => MExerciseScreen(),
             '/meals': (ctx) => MealsScreen(),
-            '/mealanalysis': (ctx) => Analysis()
+            '/mealanalysis': (ctx) => Analysis(),
+            '/sessionresult': (ctx) => SessionResult()
           },
         ));
   }

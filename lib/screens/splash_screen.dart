@@ -47,7 +47,7 @@ class _SplashScreenState extends State<SplashScreen> {
     List<User> users = Provider.of<Users>(context).users;
     return Scaffold(
         appBar: AppBar(
-          title: Text('Victor beta'),
+          title: Text('Victor'),
         ),
         drawer: MainDrawer(),
         body: isLoading == true

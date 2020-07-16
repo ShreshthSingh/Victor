@@ -63,13 +63,18 @@ class CartMeals with ChangeNotifier {
       fat += value.fat;
       calories += value.calories;
     });
+
+    // notifyListeners();
+    return {
+      'protein': double.parse((protein).toStringAsFixed(2)),
+      'carbs': double.parse((carbs).toStringAsFixed(2)),
+      'fat': double.parse((fat).toStringAsFixed(2)),
+      'calories': double.parse((calories).toStringAsFixed(2))
+    };
+  }
+
+  void clearMeals() {
     _cartMeals.clear();
     notifyListeners();
-    return {
-      'protein': protein,
-      'carbs': carbs,
-      'fat': fat,
-      'calories': calories
-    };
   }
 }

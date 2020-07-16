@@ -16,6 +16,7 @@ class _MealItemState extends State<MealItem> {
   var quantity = 0;
   var done = false;
   var _quantity = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     final meal = Provider.of<Meals>(context, listen: false).getMeal(widget.id);

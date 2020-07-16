@@ -52,7 +52,7 @@ class MainDrawer extends StatelessWidget {
                   fontSize: 18),
             ),
             onTap: () {
-              Navigator.of(context).pushNamed('/adduser');
+              Navigator.of(context).pushNamed('/sessionresult');
               // Navigator.of(context).pop();
             },
           ),
