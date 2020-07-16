@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:victor/widgets/main_drawer.dart';
 import '../providers/category.dart';
 import 'package:provider/provider.dart';
 import '../widgets/categoryitem.dart';
@@ -13,6 +14,7 @@ class CategoryScreen extends StatelessWidget {
         appBar: AppBar(
           title: Text('Categories'),
         ),
+        drawer: MainDrawer(),
         body: GridView(
           padding: const EdgeInsets.all(15),
           children: categories

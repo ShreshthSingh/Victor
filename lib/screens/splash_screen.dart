@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:victor/widgets/main_drawer.dart';
 import '../providers/user.dart';
 import '../providers/session.dart';
 
@@ -48,6 +49,7 @@ class _SplashScreenState extends State<SplashScreen> {
         appBar: AppBar(
           title: Text('Victor beta'),
         ),
+        drawer: MainDrawer(),
         body: isLoading == true
             ? Center(
                 child: CircularProgressIndicator(),

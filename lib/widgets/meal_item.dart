@@ -13,6 +13,7 @@ class MealItem extends StatefulWidget {
 }
 
 class _MealItemState extends State<MealItem> {
+  var quantity = 0;
   var done = false;
   var _quantity = TextEditingController();
   @override
@@ -59,7 +60,7 @@ class _MealItemState extends State<MealItem> {
                 Container(
                     height: 50,
                     width: 50,
-                    child: TextField(
+                    child: TextFormField(
                         controller: _quantity,
                         keyboardType: TextInputType.number,
                         decoration: new InputDecoration(

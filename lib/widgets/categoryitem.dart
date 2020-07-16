@@ -25,16 +25,16 @@ class CategoryItem extends StatelessWidget {
         padding: const EdgeInsets.all(15),
         child: Text(title,
             style: TextStyle(
-              color: Colors.black,
+              color: Colors.white,
               fontWeight: FontWeight.bold,
               fontSize: 22,
               fontFamily: 'DancingScript',
             )), //Theme.of(context).textTheme.title) //for theme,
         decoration: BoxDecoration(
-          gradient: LinearGradient(colors: [
-            Colors.white.withOpacity(0.7),
-            Colors.yellow,
-          ], begin: Alignment.topLeft, end: Alignment.bottomRight),
+          gradient: LinearGradient(
+              colors: [Colors.purple[900], Colors.white.withOpacity(0.7)],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight),
           //color: Colors.white,
           //border: Border.all(width:4,color: Colors.pink[50]) ,
 

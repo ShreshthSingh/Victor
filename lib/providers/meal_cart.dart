@@ -51,4 +51,25 @@ class CartMeals with ChangeNotifier {
     notifyListeners();
     return _cartMeals.length;
   }
+
+  Map<String, double> get macros {
+    var protein = 0.0;
+    var carbs = 0.0;
+    var fat = 0.0;
+    var calories = 0.0;
+    _cartMeals.forEach((key, value) {
+      protein += value.prot;
+      carbs += value.carb;
+      fat += value.fat;
+      calories += value.calories;
+    });
+    _cartMeals.clear();
+    notifyListeners();
+    return {
+      'protein': protein,
+      'carbs': carbs,
+      'fat': fat,
+      'calories': calories
+    };
+  }
 }
