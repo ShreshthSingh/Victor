@@ -56,19 +56,22 @@ class _MealItemState extends State<MealItem> {
                     style:
                         TextStyle(fontWeight: FontWeight.bold, fontSize: 17)),
                 SizedBox(
-                  width: 27,
+                  width: 10,
                 ),
-                Container(
-                    height: 50,
-                    width: 50,
-                    child: TextFormField(
-                        controller: _quantity,
-                        keyboardType: TextInputType.number,
-                        decoration: new InputDecoration(
-                            labelText: 'X',
-                            border: new OutlineInputBorder(
-                                borderSide:
-                                    new BorderSide(color: Colors.blue))))),
+                Align(
+                  alignment: Alignment.bottomRight,
+                  child: Container(
+                      height: 50,
+                      width: 50,
+                      child: TextFormField(
+                          controller: _quantity,
+                          keyboardType: TextInputType.number,
+                          decoration: new InputDecoration(
+                              labelText: 'X',
+                              border: new OutlineInputBorder(
+                                  borderSide:
+                                      new BorderSide(color: Colors.blue))))),
+                ),
                 RaisedButton.icon(
                   color: done == false ? Colors.green[300] : Colors.red,
                   icon: Icon(Icons.add),

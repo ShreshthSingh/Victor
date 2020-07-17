@@ -52,13 +52,13 @@ class MainDrawer extends StatelessWidget {
                   fontSize: 18),
             ),
             onTap: () {
-              Navigator.of(context).pushNamed('/sessionresult');
+              Navigator.of(context).pushNamed('/chooseuser');
               // Navigator.of(context).pop();
             },
           ),
           ListTile(
             title: Text(
-              'Add User',
+              'Add/Edit User',
               style: TextStyle(
                   color: Colors.black,
                   //fontFamily: 'AbrilFatface',

@@ -16,6 +16,7 @@ class _SignUpState extends State<SignUp> {
 
   void submitForm() {
     User user = User(
+        id: DateTime.now().toString(),
         age: int.parse(age.text),
         name: name.text,
         height: int.parse(height.text),
@@ -23,7 +24,7 @@ class _SignUpState extends State<SignUp> {
         sex: sex == 'Male' ? 5 : -161);
     Provider.of<Users>(context, listen: false).add(user);
 
-    Navigator.of(context).pushNamed('/result');
+    Navigator.of(context).pop();
   }
 
   @override

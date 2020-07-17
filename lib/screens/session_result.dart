@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:path/path.dart';
 import 'package:provider/provider.dart';
 import '../providers/session.dart';
 import 'package:pie_chart/pie_chart.dart';
+import '../providers/user.dart';
 
 class SessionResult extends StatelessWidget {
   //((mexScore / 180) * 30) + ((cardioScore / 240) * 25)
@@ -11,6 +13,7 @@ class SessionResult extends StatelessWidget {
     final cardioScore =
         Provider.of<Session>(context, listen: false).cardioScore;
     final totalScore = Provider.of<Session>(context, listen: false).totalScore;
+    final mantCal = Provider.of<Users>(context, listen: false).mantCalories;
     return Scaffold(
         appBar: AppBar(
           title: Text('Result'),
@@ -28,7 +31,9 @@ class SessionResult extends StatelessWidget {
                         'Muscle': (mexScore / 180) * 30,
                         'Cardio': (cardioScore / 240) * 25,
                       }),
-                      Text('Effective Minutes :' + totalScore.toString())
+                      Text('Effective Minutes :' + totalScore.toString()),
+                      Text('Your mantainence calories are :' +
+                          mantCal.toString())
                     ],
                   )),
             )

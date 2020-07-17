@@ -16,7 +16,7 @@ class MealsScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Choose Todays Meals'),
+        title: Text('Choose Meals'),
         actions: <Widget>[
           RaisedButton.icon(
               color: Colors.red,
