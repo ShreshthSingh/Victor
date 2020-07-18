@@ -20,6 +20,12 @@ class _MealItemState extends State<MealItem> {
   @override
   Widget build(BuildContext context) {
     final meal = Provider.of<Meals>(context, listen: false).getMeal(widget.id);
+    final addedMeal =
+        Provider.of<CartMeals>(context, listen: false).cartMeals[widget.id];
+
+    if (addedMeal != null) {
+      _quantity = TextEditingController(text: addedMeal.quant.toString());
+    }
     return Card(
         shadowColor: Colors.amber,
         elevation: 6,
