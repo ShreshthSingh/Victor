@@ -32,13 +32,12 @@ class CategoryItem extends StatelessWidget {
             )), //Theme.of(context).textTheme.title) //for theme,
         decoration: BoxDecoration(
           gradient: LinearGradient(
-              colors: [Colors.purple[900], Colors.white.withOpacity(0.7)],
+              colors: [Colors.green[900], Colors.white.withOpacity(0.7)],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight),
           //color: Colors.white,
-          //border: Border.all(width:4,color: Colors.pink[50]) ,
-
-          borderRadius: BorderRadius.circular(1),
+          border: Border.all(width: 4, color: Colors.black),
+          borderRadius: BorderRadius.circular(20),
         ),
       ),
     );

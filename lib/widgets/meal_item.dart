@@ -40,29 +40,24 @@ class _MealItemState extends State<MealItem> {
             Row(
               children: <Widget>[
                 Text(
-                  'Pro: ' + meal.protein.toString(),
+                  'P : ' + meal.protein.toString(),
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
                 ),
                 SizedBox(
-                  width: 8,
+                  width: 5,
                 ),
-                Text('Fat : ' + meal.fat.toString(),
+                Text('F : ' + meal.fat.toString(),
                     style:
                         TextStyle(fontWeight: FontWeight.bold, fontSize: 17)),
                 SizedBox(
-                  width: 8,
+                  width: 5,
                 ),
-                Text('Carbs :' + meal.carbs.toString(),
+                Text('C : ' + meal.carbs.toString(),
                     style:
                         TextStyle(fontWeight: FontWeight.bold, fontSize: 17)),
-                SizedBox(
-                  width: 10,
-                ),
-                Align(
-                  alignment: Alignment.bottomRight,
+                Expanded(
                   child: Container(
-                      height: 50,
-                      width: 50,
+                      width: 20,
                       child: TextFormField(
                           controller: _quantity,
                           keyboardType: TextInputType.number,

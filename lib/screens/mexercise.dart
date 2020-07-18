@@ -51,7 +51,7 @@ class _MExerciseScreenState extends State<MExerciseScreen> {
               icon: Icon(Icons.video_library),
               label: Text('Youtube')),
           Padding(
-            padding: const EdgeInsets.all(81.0),
+            padding: const EdgeInsets.all(20.0),
             child: TextField(
                 decoration: InputDecoration(labelText: 'Total Reps'),
                 controller: totalreps,

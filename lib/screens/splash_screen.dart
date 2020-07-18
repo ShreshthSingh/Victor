@@ -45,6 +45,10 @@ class _SplashScreenState extends State<SplashScreen> {
     Navigator.of(context).pushNamed('/meals');
   }
 
+  void goToSignup() {
+    Navigator.of(context).pushReplacementNamed('/adduser');
+  }
+
   @override
   void didChangeDependencies() {
     if (isInit) {
@@ -75,14 +79,41 @@ class _SplashScreenState extends State<SplashScreen> {
                 child: CircularProgressIndicator(),
               )
             : (user == null
-                ? Center(
-                    child: Card(
-                      color: Colors.red,
-                      child: Text(
-                        quotes[_random.nextInt(quotes.length)],
-                        style: TextStyle(fontSize: 23, color: Colors.white),
+                ? Column(
+                    children: <Widget>[
+                      Center(
+                        child: Card(
+                          color: Colors.red,
+                          child: Text(
+                            quotes[_random.nextInt(quotes.length)],
+                            style: TextStyle(fontSize: 23, color: Colors.white),
+                          ),
+                        ),
                       ),
-                    ),
+                      Center(
+                        child: ButtonTheme(
+                          minWidth: MediaQuery.of(context).size.width,
+                          height: 60,
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: RaisedButton.icon(
+                              icon: Icon(
+                                Icons.directions_bike,
+                                color: Colors.white,
+                                size: 30,
+                              ),
+                              onPressed: goToSignup,
+                              label: Text(
+                                'Add User',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 30),
+                              ),
+                              color: Colors.pink,
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
                   )
                 : Column(
                     children: <Widget>[

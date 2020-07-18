@@ -24,7 +24,7 @@ class _SignUpState extends State<SignUp> {
         sex: sex == 'Male' ? 5 : -161);
     Provider.of<Users>(context, listen: false).add(user);
 
-    Navigator.of(context).pop();
+    Navigator.of(context).pushReplacementNamed('/');
   }
 
   @override

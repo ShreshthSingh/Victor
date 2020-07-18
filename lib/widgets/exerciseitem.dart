@@ -45,9 +45,9 @@ class ExerciseItem extends StatelessWidget {
             Colors.blue,
           ], begin: Alignment.topLeft, end: Alignment.bottomRight),
           //color: Colors.white,
-          //border: Border.all(width:4,color: Colors.pink[50]) ,
+          border: Border.all(width: 4, color: Colors.blue[900]),
 
-          borderRadius: BorderRadius.circular(1),
+          borderRadius: BorderRadius.circular(20),
         ),
       ),
     );

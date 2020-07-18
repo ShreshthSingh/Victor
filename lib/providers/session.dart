@@ -39,6 +39,32 @@ class Session with ChangeNotifier {
     return score;
   }
 
+  double get factor {
+    if (totalScore <= 3) {
+      return 1;
+    } else if (3 < totalScore && totalScore <= 15) {
+      return 1.1;
+    } else if (15 < totalScore && totalScore <= 30) {
+      return 1.2;
+    } else if (30 < totalScore && totalScore <= 45) {
+      return 1.3;
+    } else if (45 < totalScore && totalScore <= 60) {
+      return 1.47;
+    } else if (60 < totalScore && totalScore <= 90) {
+      return 1.77;
+    } else if (90 < totalScore) {
+      return 1.88;
+    } else {
+      return 2;
+    }
+  }
+
+  void clearExLog() {
+    cardLog.clear();
+    mexLog.clear();
+    notifyListeners();
+  }
+
 /* 
   Stopwatch session = Stopwatch();
   Map<String, dynamic> presentSession = {'id': '', 'time': 0.0};

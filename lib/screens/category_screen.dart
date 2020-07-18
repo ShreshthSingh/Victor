@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:path/path.dart';
 import 'package:victor/widgets/main_drawer.dart';
 import '../providers/category.dart';
 import 'package:provider/provider.dart';
 import '../widgets/categoryitem.dart';
+import '../providers/session.dart';
 
 class CategoryScreen extends StatelessWidget {
+  void clear(context) {
+    Provider.of<Session>(context, listen: false).clearExLog();
+  }
+
   @override
   Widget build(BuildContext context) {
     List<Category> categories =
@@ -13,6 +19,13 @@ class CategoryScreen extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text('Categories'),
+          actions: <Widget>[
+            RaisedButton.icon(
+                color: Colors.blue[300],
+                onPressed: () => clear(context),
+                icon: Icon(Icons.refresh),
+                label: Text('Restart'))
+          ],
         ),
         drawer: MainDrawer(),
         body: GridView(
