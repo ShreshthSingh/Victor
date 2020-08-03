@@ -1,3 +1,7 @@
+"​​​​"Bravest of the brave, most generous of the generous, never had a country more faithful friends than you."
+         - Professor Sir Ralph Turner MC, ex-3rd Gurkha Rifles​
+
+Professor Sir Ralph Turner MC, ex-3rd Gurkha Rifles"
 # Victor 1.0 (Balidan sarvopary)
 Victor: [ATTENTION: Everything works offline be it sessioning,be it meal planning etc] except youtube videos. ;)
 To run this project on your local machine.
