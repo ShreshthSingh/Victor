@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+/* import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:convert';
+import 'dart:async'; */
+import 'package:path_provider/path_provider.dart' as syspath;
+import 'package:path/path.dart' as path;
+import '../DBhelper/dbhelper.dart';
 
 class Meal {
   final String id;
@@ -129,6 +135,22 @@ class Meals with ChangeNotifier {
         carbs: 3.4,
         calories: 98,
         imagepath: ''),
+    Meal(
+        id: 'm17',
+        name: 'Milk(whole 1 big glass)',
+        protein: 7.7,
+        fat: 8,
+        carbs: 11.7,
+        calories: 149,
+        imagepath: ''),
+    Meal(
+        id: 'm18',
+        name: 'Khichdi(100gm with Pulses)',
+        protein: 6,
+        fat: 1.1,
+        carbs: 20.5,
+        calories: 110,
+        imagepath: '')
   ];
 
   List<Meal> get meals {

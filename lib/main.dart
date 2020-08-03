@@ -4,6 +4,8 @@ import 'package:victor/providers/category.dart';
 import 'package:victor/providers/exercises.dart';
 import 'package:victor/providers/meal.dart';
 import 'package:victor/providers/session.dart';
+import 'package:victor/providers/user_meals.dart';
+import 'package:victor/screens/add_meal_screen.dart';
 import 'package:victor/screens/category_screen.dart';
 import 'package:victor/screens/cardio_exercise_sceen.dart';
 import 'package:victor/screens/choose_user.dart';
@@ -15,6 +17,7 @@ import 'package:victor/screens/session_result.dart';
 import 'package:victor/screens/sign_up.dart';
 import 'package:victor/screens/splash_screen.dart';
 import 'package:victor/screens/timer.dart';
+import 'package:victor/screens/user_meals_screen.dart';
 import './providers/user.dart';
 import './screens/result.dart';
 import './providers/meal_cart.dart';
@@ -33,7 +36,8 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider.value(value: Exercises()),
           ChangeNotifierProvider.value(value: Session()),
           ChangeNotifierProvider.value(value: Meals()),
-          ChangeNotifierProvider.value(value: CartMeals())
+          ChangeNotifierProvider.value(value: CartMeals()),
+          ChangeNotifierProvider.value(value: UserMeals())
         ],
         child: MaterialApp(
           theme: ThemeData(
@@ -52,7 +56,9 @@ class MyApp extends StatelessWidget {
             '/meals': (ctx) => MealsScreen(),
             '/mealanalysis': (ctx) => Analysis(),
             '/sessionresult': (ctx) => SessionResult(),
-            '/chooseuser': (ctx) => ChooseUser()
+            '/chooseuser': (ctx) => ChooseUser(),
+            '/usermeals': (ctx) => UserMealsScreen(),
+            '/addmeal': (ctx) => AddMealScreen()
           },
         ));
   }

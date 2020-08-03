@@ -31,9 +31,6 @@ class _TimerPageState extends State<TimerPage> {
           padding: const EdgeInsets.all(8.0),
           child: Row(
             children: <Widget>[
-              SizedBox(
-                width: 30,
-              ),
               TikTikTimer(
                 initialDate: DateTime.now(),
                 running: running,
@@ -49,40 +46,38 @@ class _TimerPageState extends State<TimerPage> {
                       (time.currentHour * 3600);
                 },
               ),
-              SizedBox(
-                width: 30,
-              ),
-              RaisedButton(
-                child: Text(
-                  'Start',
-                  style: TextStyle(color: Colors.white),
+              Expanded(
+                child: RaisedButton(
+                  child: Text(
+                    'Start',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  color: Colors.green,
+                  onPressed: () {
+                    try {
+                      if (running == false)
+                        setState(() {
+                          running = true;
+                        });
+                    } on Exception {}
+                  },
                 ),
-                color: Colors.green,
-                onPressed: () {
-                  try {
-                    if (running == false)
+              ),
+              Expanded(
+                child: RaisedButton(
+                  child: Text(
+                    'Stop',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  color: Colors.red,
+                  onPressed: () {
+                    if (running == true)
                       setState(() {
-                        running = true;
+                        running = false;
                       });
-                  } on Exception {}
-                },
-              ),
-              SizedBox(
-                width: 30,
-              ),
-              RaisedButton(
-                child: Text(
-                  'Stop',
-                  style: TextStyle(color: Colors.white),
+                    widget.sessionAdded(sessionTime);
+                  },
                 ),
-                color: Colors.red,
-                onPressed: () {
-                  if (running == true)
-                    setState(() {
-                      running = false;
-                    });
-                  widget.sessionAdded(sessionTime);
-                },
               )
             ],
           ),

@@ -10,6 +10,10 @@ class MealsScreen extends StatelessWidget {
     Navigator.of(context).pushNamed('/mealanalysis');
   }
 
+  void goToCustom(BuildContext context) {
+    Navigator.of(context).pushNamed('/usermeals');
+  }
+
   Widget build(BuildContext context) {
     final mealData = Provider.of<Meals>(context, listen: false);
 
@@ -41,18 +45,38 @@ class MealsScreen extends StatelessWidget {
                   itemCount: mealData.meals.length,
                   itemBuilder: (context, i) =>
                       MealItem(mealData.meals[i].id, mealData.meals[i].name))),
-          RaisedButton.icon(
-            icon: Icon(
-              Icons.fastfood,
-              color: Colors.white,
-            ),
-            color: Colors.red,
-            label: Text(
-              'Analysis',
-              style: TextStyle(color: Colors.white),
-            ),
-            onPressed: () => goToAnalysis(context),
-          )
+          Row(
+            children: <Widget>[
+              Expanded(
+                child: RaisedButton.icon(
+                  icon: Icon(
+                    Icons.fastfood,
+                    color: Colors.white,
+                  ),
+                  color: Colors.red,
+                  label: Text(
+                    'Analysis',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onPressed: () => goToAnalysis(context),
+                ),
+              ),
+              Expanded(
+                child: RaisedButton.icon(
+                  icon: Icon(
+                    Icons.exposure,
+                    color: Colors.white,
+                  ),
+                  color: Colors.blue,
+                  label: Text(
+                    'CUSTOM MEALS',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onPressed: () => goToCustom(context),
+                ),
+              )
+            ],
+          ),
         ],
       ),
     );

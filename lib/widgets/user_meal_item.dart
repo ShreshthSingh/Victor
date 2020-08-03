@@ -1,25 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:victor/providers/meal_cart.dart';
-import '../providers/meal.dart';
+import '../providers/user_meals.dart';
 import '../providers/meal_cart.dart';
 
-class MealItem extends StatefulWidget {
+class UserMealItem extends StatefulWidget {
   final String id;
   final String name;
-  MealItem(this.id, this.name);
+  UserMealItem(this.id, this.name);
   @override
-  _MealItemState createState() => _MealItemState();
+  _UserMealItemState createState() => _UserMealItemState();
 }
 
-class _MealItemState extends State<MealItem> {
+class _UserMealItemState extends State<UserMealItem> {
   var quantity = 0;
   var done = false;
   var _quantity = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    final meal = Provider.of<Meals>(context, listen: false).getMeal(widget.id);
+    final meal =
+        Provider.of<UserMeals>(context, listen: false).getMeal(widget.id);
     final addedMeal =
         Provider.of<CartMeals>(context, listen: false).cartMeals[widget.id];
 
@@ -31,11 +32,11 @@ class _MealItemState extends State<MealItem> {
       child: Container(
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
-            border: Border.all(width: 2, color: Colors.blue[900]),
+            border: Border.all(width: 2, color: Colors.black),
             gradient: LinearGradient(
                 begin: Alignment.topRight,
                 end: Alignment.bottomLeft,
-                colors: [Colors.blue[300], Colors.white])),
+                colors: [Colors.blue[50], Colors.white])),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
@@ -83,14 +84,8 @@ class _MealItemState extends State<MealItem> {
                   ),
                   RaisedButton.icon(
                     color: done == false ? Colors.blue : Colors.red,
-                    icon: Icon(
-                      Icons.add,
-                      color: Colors.white,
-                    ),
-                    label: Text(
-                      'Add',
-                      style: TextStyle(color: Colors.white),
-                    ),
+                    icon: Icon(Icons.add),
+                    label: Text('Add'),
                     onPressed: () {
                       Provider.of<CartMeals>(context, listen: false)
                           .addMeal(meal, double.parse(_quantity.text));

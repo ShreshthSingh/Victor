@@ -43,7 +43,7 @@ class Session with ChangeNotifier {
     if (totalScore <= 3) {
       return 1;
     } else if (3 < totalScore && totalScore <= 15) {
-      return 1.1;
+      return 1.05;
     } else if (15 < totalScore && totalScore <= 30) {
       return 1.2;
     } else if (30 < totalScore && totalScore <= 45) {

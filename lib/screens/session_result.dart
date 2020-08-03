@@ -20,43 +20,45 @@ class SessionResult extends StatelessWidget {
         appBar: AppBar(
           title: Text('Result'),
         ),
-        body: Column(
-          children: <Widget>[
-            Card(
-              child: Container(
-                  width: MediaQuery.of(context).size.width,
-                  child: Column(
-                    children: <Widget>[
-                      Text('Muscle Score :' + mexScore.toString(),
+        body: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              Card(
+                child: Container(
+                    width: MediaQuery.of(context).size.width,
+                    child: Column(
+                      children: <Widget>[
+                        Text('Muscle Score :' + mexScore.toString(),
+                            style: TextStyle(
+                                fontSize: 25, fontWeight: FontWeight.bold)),
+                        Text('Cardio Score :' + cardioScore.toString(),
+                            style: TextStyle(
+                                fontSize: 25, fontWeight: FontWeight.bold)),
+                        PieChart(dataMap: {
+                          'Muscle': (mexScore / 180) * 30,
+                          'Cardio': (cardioScore / 240) * 25,
+                        }),
+                        Text(
+                            'Effective Minutes :' +
+                                (totalScore).toStringAsFixed(2),
+                            style: TextStyle(
+                                fontSize: 25, fontWeight: FontWeight.bold)),
+                        Text(
+                            'Your base mantainence calories are :' +
+                                (mantCal).toStringAsFixed(2),
+                            style: TextStyle(
+                                fontSize: 25, fontWeight: FontWeight.bold)),
+                        Text(
+                          'For a daily workout like today you need :' +
+                              ((mantCal * factor)).toStringAsFixed(2),
                           style: TextStyle(
-                              fontSize: 25, fontWeight: FontWeight.bold)),
-                      Text('Cardio Score :' + cardioScore.toString(),
-                          style: TextStyle(
-                              fontSize: 25, fontWeight: FontWeight.bold)),
-                      PieChart(dataMap: {
-                        'Muscle': (mexScore / 180) * 30,
-                        'Cardio': (cardioScore / 240) * 25,
-                      }),
-                      Text(
-                          'Effective Minutes :' +
-                              (totalScore).toStringAsFixed(2),
-                          style: TextStyle(
-                              fontSize: 25, fontWeight: FontWeight.bold)),
-                      Text(
-                          'Your base mantainence calories are :' +
-                              (mantCal).toStringAsFixed(2),
-                          style: TextStyle(
-                              fontSize: 25, fontWeight: FontWeight.bold)),
-                      Text(
-                        'For a daily workout like today you need :' +
-                            ((mantCal * factor)).toStringAsFixed(2),
-                        style: TextStyle(
-                            fontSize: 25, fontWeight: FontWeight.bold),
-                      )
-                    ],
-                  )),
-            )
-          ],
+                              fontSize: 25, fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    )),
+              )
+            ],
+          ),
         ));
   }
 }

@@ -32,7 +32,7 @@ class Exercises with ChangeNotifier {
         isCardio: false,
         steps: ['', '', '', '', ''],
         warnings: ['', '', '', '', ''],
-        muscleScr: 0.70,
+        muscleScr: 0.60,
         cardioScr: 0.10,
         upath: 'https://www.youtube.com/results?search_query=pushups'),
     Exercise(
@@ -64,7 +64,7 @@ class Exercises with ChangeNotifier {
         steps: ['', '', '', '', ''],
         warnings: ['', '', '', '', ''],
         muscleScr: 0.10,
-        cardioScr: 0.95),
+        cardioScr: 0.99),
     Exercise(
         id: 'e5',
         isCardio: true,
@@ -74,7 +74,7 @@ class Exercises with ChangeNotifier {
         steps: ['', '', '', '', ''],
         warnings: ['', '', '', '', ''],
         muscleScr: 0.13,
-        cardioScr: 0.85),
+        cardioScr: 0.75),
     Exercise(
         id: 'e6',
         isCardio: true,
@@ -84,7 +84,7 @@ class Exercises with ChangeNotifier {
         steps: ['', '', '', '', ''],
         warnings: ['', '', '', '', ''],
         muscleScr: 0.56,
-        cardioScr: 0.30),
+        cardioScr: 0.50),
     Exercise(
         id: 'e7',
         isCardio: true,

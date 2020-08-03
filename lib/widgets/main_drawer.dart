@@ -66,7 +66,18 @@ class MainDrawer extends StatelessWidget {
             ),
             onTap: () {
               Navigator.of(context).pushNamed('/adduser');
-              // Navigator.of(context).pop();
+            },
+          ),
+          ListTile(
+            title: Text(
+              'Home',
+              style: TextStyle(
+                  color: Colors.black,
+                  //fontFamily: 'AbrilFatface',
+                  fontSize: 18),
+            ),
+            onTap: () {
+              Navigator.of(context).pushReplacementNamed('/');
             },
           )
         ],
