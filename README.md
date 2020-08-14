@@ -5,6 +5,7 @@ Professor Sir Ralph Turner MC, ex-3rd Gurkha Rifles"
 # Victor 1.0 (Balidan sarvopary)
 Victor: [ATTENTION: Everything works offline be it sessioning,be it meal planning etc] except youtube videos. ;)
 To run this project on your local machine.
+DOWNLOAD AND INSTALL RELEASE APK IN YOUR MOBILE PHONE(TECHIE) ORR DO AS MENTIONED BELOW(SUPER TECHIE)
 First install android studio+emulator
 Install flutter sdk https://www.tutorialspoint.com/flutter/flutter_installation.htm
 1) Create a new Flutter project via flutter create some_project
