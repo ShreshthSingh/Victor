@@ -41,4 +41,9 @@ class UserMeals with ChangeNotifier {
   Meal getMeal(id) {
     return _userMeals.firstWhere((element) => element.id == id);
   }
+
+  Future<void> deleteMeal(String id) async {
+    await DBhelper.deleteRecord(id, 'user_meals');
+    fetchAndSet();
+  }
 }

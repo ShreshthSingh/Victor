@@ -71,7 +71,7 @@ class _SplashScreenState extends State<SplashScreen> {
     User user = Provider.of<Users>(context).user;
     return Scaffold(
         appBar: AppBar(
-          title: Text('Victor-(Balidan Sarvoparay)'),
+          title: Text('Victor 1.0'),
         ),
         drawer: MainDrawer(),
         body: isLoading == true

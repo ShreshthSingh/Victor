@@ -46,6 +46,16 @@ class _UserMealItemState extends State<UserMealItem> {
                   Text(
                     widget.name,
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),
+                  ),
+                  IconButton(
+                    icon: Icon(
+                      Icons.delete,
+                      color: Colors.red,
+                    ),
+                    onPressed: () {
+                      Provider.of<UserMeals>(context, listen: false)
+                          .deleteMeal(meal.id);
+                    },
                   )
                 ],
               ),
