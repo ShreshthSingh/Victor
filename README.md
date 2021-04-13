@@ -2,7 +2,7 @@
          - Professor Sir Ralph Turner MC, ex-3rd Gurkha Rifles​
 
 Professor Sir Ralph Turner MC, ex-3rd Gurkha Rifles"
-# Victor 1.0 (Balidan sarvopary)
+# Victor 1.0 (Balidan sarvopary) -SUPER DUPER SIMPLE BUT STRONG APP FOR INDIAN FITNESS  
 Victor: [ATTENTION: Everything works offline be it sessioning,be it meal planning etc] except youtube videos. ;)
 To run this project on your local machine.
 DOWNLOAD AND INSTALL RELEASE APK IN YOUR MOBILE PHONE(TECHIE) ORR DO AS MENTIONED BELOW(SUPER TECHIE)
